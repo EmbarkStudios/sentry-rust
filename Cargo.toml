@@ -84,8 +84,3 @@ required-features = ["with_env_logger"]
 
 [workspace]
 members = [".", "integrations/sentry-actix"]
-
-
-
-[patch.crates-io]
-reqwest = { git = "https://github.com/seanmonstar/reqwest.git", rev = "18fd9a6" }
