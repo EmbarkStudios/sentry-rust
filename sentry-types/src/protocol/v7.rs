@@ -1706,7 +1706,7 @@ impl Attachment {
     {
         writeln!(
             writer,
-            r#"{{"type":"attachment","length":{length},"filename":"{filename}",attachment_type:"{at}"}}"#,
+            r#"{{"type":"attachment","length":{length},"filename":"{filename}","attachment_type":"{at}"}}"#,
             filename = self.filename.to_string_lossy(),
             length = self.buffer.len(),
             at = self.ty.unwrap_or_default().as_str()
