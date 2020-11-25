@@ -284,6 +284,11 @@ impl Client {
         Default::default()
     }
 
+    /// Assembles an [`Event`](crate::protocol::Event), and possibly a
+    /// [`SessionUpdate`](crate::protocol::SessionUpdate), by adding the
+    /// additional context provided in the specified [`Scope`](crate::Scope)
+    /// just as when using [`capture_event`](crate::Client::capture_event),
+    /// but **without** actually sending the event to sentry.
     pub fn assemble_event(
         &self,
         event: Event<'static>,
