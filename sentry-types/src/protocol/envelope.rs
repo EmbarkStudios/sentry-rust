@@ -8,7 +8,7 @@ use super::v7::{Attachment, Event, SessionAggregates, SessionUpdate, Transaction
 ///
 /// See the [documentation on Items](https://develop.sentry.dev/sdk/envelopes/#items)
 /// for more details.
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Debug, PartialEq)]
 #[non_exhaustive]
 pub enum EnvelopeItem {
     /// An Event Item.
@@ -86,7 +86,7 @@ impl<'s> Iterator for EnvelopeItemIter<'s> {
 ///
 /// See the [documentation on Envelopes](https://develop.sentry.dev/sdk/envelopes/)
 /// for more details.
-#[derive(Clone, Default, Debug, PartialEq)]
+#[derive(Default, Debug, PartialEq)]
 pub struct Envelope {
     event_id: Option<Uuid>,
     items: Vec<EnvelopeItem>,
