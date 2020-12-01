@@ -1,11 +1,10 @@
-use std::{
-    any::TypeId,
-    borrow::Cow,
-    fmt,
-    panic::RefUnwindSafe,
-    sync::{Arc, RwLock},
-    time::Duration,
-};
+use std::any::TypeId;
+use std::borrow::Cow;
+use std::fmt;
+use std::panic::RefUnwindSafe;
+use std::sync::Arc;
+use std::sync::RwLock;
+use std::time::Duration;
 
 use rand::random;
 use sentry_types::protocol::v7::SessionUpdate;
@@ -282,11 +281,11 @@ impl Client {
         Default::default()
     }
 
-    /// Assembles an [`Event`](crate::protocol::Event), and possibly a
-    /// [`SessionUpdate`](crate::protocol::SessionUpdate), by adding the
-    /// additional context provided in the specified [`Scope`](crate::Scope)
-    /// just as when using [`capture_event`](crate::Client::capture_event),
-    /// but **without** actually sending the event to sentry.
+    /// Assembles an [`Event`] and [`SessionUpdate`].
+    ///
+    /// Adds the additional context provided in the specified [`Scope`]
+    /// just as when using [`capture_event`](crate::Client::capture_event), but **without** actually sending
+    /// the event to sentry.
     pub fn assemble_event(
         &self,
         event: Event<'static>,
